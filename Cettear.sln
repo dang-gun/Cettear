@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cettear", "Cettear\Cettear.csproj", "{62FFA566-1CB6-4C35-AAAF-8DD130C7C191}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Global", "Global", "{29BD8369-D20E-44CE-A508-DEA9A1869B53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGU_GoogleAPI", "..\..\..\Project_VS\DGUtil\DGU_GoogleAPI\DGU_GoogleAPI.csproj", "{A756531D-8781-4AEF-A90D-98DADA1949CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGU_File", "..\..\..\Project_VS\DGUtil\DGU_File\DGU_File.csproj", "{03619679-B44A-4C13-ACD5-372409ADF4A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62FFA566-1CB6-4C35-AAAF-8DD130C7C191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62FFA566-1CB6-4C35-AAAF-8DD130C7C191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62FFA566-1CB6-4C35-AAAF-8DD130C7C191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62FFA566-1CB6-4C35-AAAF-8DD130C7C191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A756531D-8781-4AEF-A90D-98DADA1949CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A756531D-8781-4AEF-A90D-98DADA1949CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A756531D-8781-4AEF-A90D-98DADA1949CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A756531D-8781-4AEF-A90D-98DADA1949CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03619679-B44A-4C13-ACD5-372409ADF4A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03619679-B44A-4C13-ACD5-372409ADF4A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03619679-B44A-4C13-ACD5-372409ADF4A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03619679-B44A-4C13-ACD5-372409ADF4A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A756531D-8781-4AEF-A90D-98DADA1949CC} = {29BD8369-D20E-44CE-A508-DEA9A1869B53}
+		{03619679-B44A-4C13-ACD5-372409ADF4A6} = {29BD8369-D20E-44CE-A508-DEA9A1869B53}
+	EndGlobalSection
+EndGlobal
