@@ -1,8 +1,12 @@
 # Cettear
 공동 게임 번역 플랫폼 세티아
+프로젝트 설명 : http://blog.danggun.net/4688
 
 ** 정리중입니다.  **
 
-http://blog.danggun.net/4688
+라이선스 변경 가능성 있습니다.
+기여하지 말아 주세요.
+
+
 
 
