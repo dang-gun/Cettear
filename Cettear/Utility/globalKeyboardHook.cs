@@ -17,6 +17,11 @@ namespace Utility
 		/// </summary>
 		public delegate int keyboardHookProc(int code, int wParam, ref keyboardHookStruct lParam);
 
+		/// <summary>
+		/// https://www.codeproject.com/Articles/19004/A-Simple-C-Global-Low-Level-Keyboard-Hook?msg=4468644#xx4468644xx
+		/// </summary>
+		private keyboardHookProc _keyboardHookProc;
+
 		public struct keyboardHookStruct
 		{
 			public int vkCode;
@@ -81,7 +86,12 @@ namespace Utility
 		public void hook()
 		{
 			IntPtr hInstance = LoadLibrary("User32");
-			hhook = SetWindowsHookEx(WH_KEYBOARD_LL, hookProc, hInstance, 0);
+			//hhook = SetWindowsHookEx(WH_KEYBOARD_LL, hookProc, hInstance, 0);
+
+			//https://www.codeproject.com/Articles/19004/A-Simple-C-Global-Low-Level-Keyboard-Hook?msg=4468644#xx4468644xx
+			hInstance = LoadLibrary("User32");
+			_keyboardHookProc = new keyboardHookProc(hookProc);
+			hhook = SetWindowsHookEx(WH_KEYBOARD_LL, _keyboardHookProc, hInstance, 0);
 		}
 
 		/// <summary>
@@ -116,7 +126,9 @@ namespace Utility
 						KeyUp(this, kea);
 					}
 					if (kea.Handled)
+					{
 						return 1;
+					}
 				}
 			}
 			return CallNextHookEx(hhook, code, wParam, ref lParam);
