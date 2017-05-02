@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,9 +15,17 @@ namespace Cettear
 		[STAThread]
 		static void Main()
 		{
+			//try
+			//{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new frmRemote());
+			//}
+			//catch (Exception ex)
+			//{
+			//	Debug.WriteLine(ex.ToString());
+			//}
+
 		}
 	}
 }

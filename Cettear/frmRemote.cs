@@ -114,7 +114,7 @@ namespace Cettear
 								, Global_Cetterar.CaptureRect01.Height);
 
 			// 비트맵을 데이터를 파일로 저장
-			bitmapCapture.Save(@"f:\aaa.png");
+			bitmapCapture.Save(@"temp.png");
 			bitmapCapture.Dispose();
 
 			//OCR정보 표시 **********************
@@ -189,6 +189,8 @@ namespace Cettear
 			{// 캡처 & 범위 시작 키
 				this.StartTranslate();
 			}
+
+			e.Handled = true;
 		}
 
 		private void TxtHotKey_CaptureRange_GotFocus(object sender, EventArgs e)
