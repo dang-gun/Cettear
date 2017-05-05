@@ -15,16 +15,16 @@ namespace Cettear
 		[STAThread]
 		static void Main()
 		{
-			//try
-			//{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new frmRemote());
-			//}
-			//catch (Exception ex)
-			//{
-			//	Debug.WriteLine(ex.ToString());
-			//}
+			try
+			{
+				Application.EnableVisualStyles();
+				Application.SetCompatibleTextRenderingDefault(false);
+				Application.Run(new frmRemote());
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.ToString());
+			}
 
 		}
 	}

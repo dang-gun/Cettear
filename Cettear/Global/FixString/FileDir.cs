@@ -12,5 +12,7 @@ namespace Global.FixString
 		/// 옵션 폴더
 		/// </summary>
 		public static readonly string Dir_Option = @"Option\";
+
+		public static readonly string Dir_File = @"aaa.png";
 	}
 }

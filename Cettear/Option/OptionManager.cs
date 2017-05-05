@@ -113,6 +113,7 @@ namespace Cettear.Option
 		{
 			//파일을 저장한다.
 			File.Copy(sOriDir, this.Dir_GoogleServiceFile, true);
+			this.Google.ServiceKeyFile = true;
 		}
 
 		/// <summary>

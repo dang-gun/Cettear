@@ -110,10 +110,10 @@ namespace Cettear
 					sTemp += "\n OCR : " + tempRow.GroupData.OutText;
 				}
 
-				this.Screen.DrawString(sTemp
+				/*this.Screen.DrawString(sTemp
 									, m_fontNanum16
 									, m_brushRed
-									, rectF1);
+									, rectF1);*/
 				Form_Paint(sTemp, rectF1);
 			}
 
@@ -139,21 +139,12 @@ namespace Cettear
 			float dpi = this.Screen.DpiY;
 			using (GraphicsPath path = GetStringPath(sOutText, dpi, rect, font, format))
 			{
-				
-
-
 				Pen pen = new Pen(Color.Black);
 				pen.Width = 2;
 				this.Screen.DrawPath(pen, path);
-
-
+				
 				SolidBrush bbb = new SolidBrush(Color.Red);
 				this.Screen.FillPath(bbb, path);
-
-
-
-
-
 			}
 		}
 
