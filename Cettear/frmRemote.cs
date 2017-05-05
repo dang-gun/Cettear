@@ -16,7 +16,6 @@ using Google.Apis.Vision.v1.Data;
 using Cettear.Global;
 using DGU_GoogleAPI.Translate;
 using Global.FixString;
-using System.IO;
 
 namespace Cettear
 {
@@ -34,8 +33,6 @@ namespace Cettear
 		{
 			InitializeComponent();
 
-			this.txtApiKey.LostFocus += TxtApiKey_LostFocus;
-
 			this.m_TAPI = new Translate(Global_Cetterar.OptionMgr.Google.APIKey);
 			this.m_TAPI.Language_Original = TypeLanguageCode.en;
 			this.m_TAPI.Language_Translate = TypeLanguageCode.ja;
@@ -50,16 +47,6 @@ namespace Cettear
 			this.txtHotKey_CaptureRangeShow.LostFocus += TxtHotKey_CaptureRange_LostFocus;
 			this.txtHotKey_CaptureOCR.GotFocus += TxtHotKey_CaptureRange_GotFocus;
 			this.txtHotKey_CaptureOCR.LostFocus += TxtHotKey_CaptureRange_LostFocus;
-		}
-
-		private void TxtApiKey_LostFocus(object sender, EventArgs e)
-		{
-			if ("" != this.txtApiKey.Text)
-			{//값이 있다.
-				//키입력
-				Global_Cetterar.OptionMgr.Google.APIKey = this.txtApiKey.Text;
-				Global_Cetterar.OptionMgr.Save_Google();
-			}
 		}
 
 		private void frmRemote_Load(object sender, EventArgs e)
@@ -108,7 +95,6 @@ namespace Cettear
 				//파일 복사.
 				Global_Cetterar.OptionMgr.Save_GoogleServiceFile(ofdServiceKey.FileName);
 				Global_Cetterar.OptionMgr.Check_GoogleServiceFile();
-				this.labApiKeyFileInfo.Text = Global_Cetterar.OptionMgr.Google.ServiceKeyFile.ToString();
 			}
 		}
 		#endregion
@@ -121,23 +107,12 @@ namespace Cettear
 		{
 			Global_Cetterar.FormScreen.DrawClear();
 
-			if (false == File.Exists(Global_Cetterar.OptionMgr.Dir_GoogleServiceFile))
-			{
-				MessageBox.Show("'사용자 계정 키'가 지정되지 않았습니다.");
-				return;
-			}
-			else if ("" == Global_Cetterar.OptionMgr.Google.APIKey)
-			{
-				MessageBox.Show("'API Key'가 지정되지 않았습니다.");
-				return;
-			}
-
 			//캡쳐 ************************
-				Bitmap bitmapCapture = Global_Cetterar.Util_ScreenShot.Capture(
-							Global_Cetterar.CaptureRect01.X
-							, Global_Cetterar.CaptureRect01.Y
-							, Global_Cetterar.CaptureRect01.Width
-							, Global_Cetterar.CaptureRect01.Height);
+			Bitmap bitmapCapture = Global_Cetterar.Util_ScreenShot.Capture(
+								Global_Cetterar.CaptureRect01.X
+								, Global_Cetterar.CaptureRect01.Y
+								, Global_Cetterar.CaptureRect01.Width
+								, Global_Cetterar.CaptureRect01.Height);
 
 			// 비트맵을 데이터를 파일로 저장
 			bitmapCapture.Save(FileDir.Dir_File);
@@ -162,7 +137,7 @@ namespace Cettear
 			Annotate annotate
 				= new Annotate(Global_Cetterar.OptionMgr.Dir_GoogleServiceFile);
 			annotate.Language_Taget = TypeLanguageCode.en;
-
+			
 			annotate.FeaturType = TypeFeatur.DOCUMENT_TEXT_DETECTION;
 
 			Application.DoEvents();
@@ -177,12 +152,12 @@ namespace Cettear
 				//ocr데이터를 입력하고
 				Global_Cetterar.OCRMgr.Data_SetOCR(rest);
 			}
+
+			return;
 		}
 
 		public async Task TTTT()
 		{
-			//api호출전에 키 다시 세팅
-			this.m_TAPI.APIKey = Global_Cetterar.OptionMgr.Google.APIKey;
 			string[] result = await this.m_TAPI.TranslateText(Global_Cetterar.OCRMgr.GetText());
 
 			for (int i = 0; i < result.Length; ++i)
