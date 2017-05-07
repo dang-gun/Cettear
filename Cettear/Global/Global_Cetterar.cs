@@ -56,6 +56,8 @@ namespace Cettear.Global
 		/// </summary>
 		public static OCRManager OCRMgr = new OCRManager();
 
+		public static LanguageCodeManager LCMgr = new LanguageCodeManager();
+
 		/// <summary>
 		/// 생성자
 		/// </summary>

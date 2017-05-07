@@ -33,6 +33,15 @@
 			this.btnCaptureRangeShow = new System.Windows.Forms.Button();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.cbLang1_Step2 = new System.Windows.Forms.ComboBox();
+			this.cbLang1_Step1 = new System.Windows.Forms.ComboBox();
+			this.cbLang1_OCR = new System.Windows.Forms.ComboBox();
+			this.chkLang1_Step2 = new System.Windows.Forms.CheckBox();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.txtHotKey_CaptureOCR = new System.Windows.Forms.TextBox();
+			this.txtHotKey_CaptureRangeShow = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.txtHotKey_CaptureRange = new System.Windows.Forms.TextBox();
 			this.chkOCRView = new System.Windows.Forms.CheckBox();
@@ -42,10 +51,10 @@
 			this.txtApiKey = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.txtHotKey_CaptureRangeShow = new System.Windows.Forms.TextBox();
-			this.txtHotKey_CaptureOCR = new System.Windows.Forms.TextBox();
+			this.btnLang1_Save = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
+			this.groupBox1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -91,6 +100,7 @@
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.groupBox1);
 			this.tabPage1.Controls.Add(this.txtHotKey_CaptureOCR);
 			this.tabPage1.Controls.Add(this.txtHotKey_CaptureRangeShow);
 			this.tabPage1.Controls.Add(this.label3);
@@ -106,6 +116,91 @@
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "리모콘";
 			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.btnLang1_Save);
+			this.groupBox1.Controls.Add(this.cbLang1_Step2);
+			this.groupBox1.Controls.Add(this.cbLang1_Step1);
+			this.groupBox1.Controls.Add(this.cbLang1_OCR);
+			this.groupBox1.Controls.Add(this.chkLang1_Step2);
+			this.groupBox1.Controls.Add(this.label5);
+			this.groupBox1.Controls.Add(this.label4);
+			this.groupBox1.Location = new System.Drawing.Point(6, 135);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(266, 100);
+			this.groupBox1.TabIndex = 11;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "번역 언어 지정";
+			// 
+			// cbLang1_Step2
+			// 
+			this.cbLang1_Step2.FormattingEnabled = true;
+			this.cbLang1_Step2.Location = new System.Drawing.Point(82, 62);
+			this.cbLang1_Step2.Name = "cbLang1_Step2";
+			this.cbLang1_Step2.Size = new System.Drawing.Size(121, 20);
+			this.cbLang1_Step2.TabIndex = 12;
+			// 
+			// cbLang1_Step1
+			// 
+			this.cbLang1_Step1.FormattingEnabled = true;
+			this.cbLang1_Step1.Location = new System.Drawing.Point(82, 40);
+			this.cbLang1_Step1.Name = "cbLang1_Step1";
+			this.cbLang1_Step1.Size = new System.Drawing.Size(121, 20);
+			this.cbLang1_Step1.TabIndex = 12;
+			// 
+			// cbLang1_OCR
+			// 
+			this.cbLang1_OCR.FormattingEnabled = true;
+			this.cbLang1_OCR.Location = new System.Drawing.Point(82, 16);
+			this.cbLang1_OCR.Name = "cbLang1_OCR";
+			this.cbLang1_OCR.Size = new System.Drawing.Size(121, 20);
+			this.cbLang1_OCR.TabIndex = 12;
+			// 
+			// chkLang1_Step2
+			// 
+			this.chkLang1_Step2.Location = new System.Drawing.Point(8, 62);
+			this.chkLang1_Step2.Name = "chkLang1_Step2";
+			this.chkLang1_Step2.Size = new System.Drawing.Size(70, 20);
+			this.chkLang1_Step2.TabIndex = 11;
+			this.chkLang1_Step2.Text = "2차 언어";
+			this.chkLang1_Step2.UseVisualStyleBackColor = true;
+			// 
+			// label5
+			// 
+			this.label5.Location = new System.Drawing.Point(6, 39);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(70, 20);
+			this.label5.TabIndex = 10;
+			this.label5.Text = "1차 언어";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label4
+			// 
+			this.label4.Location = new System.Drawing.Point(6, 15);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(70, 20);
+			this.label4.TabIndex = 10;
+			this.label4.Text = "감지 언어";
+			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// txtHotKey_CaptureOCR
+			// 
+			this.txtHotKey_CaptureOCR.Location = new System.Drawing.Point(145, 86);
+			this.txtHotKey_CaptureOCR.Name = "txtHotKey_CaptureOCR";
+			this.txtHotKey_CaptureOCR.ReadOnly = true;
+			this.txtHotKey_CaptureOCR.Size = new System.Drawing.Size(32, 21);
+			this.txtHotKey_CaptureOCR.TabIndex = 9;
+			this.txtHotKey_CaptureOCR.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHotKey_CaptureOCR_KeyDown);
+			// 
+			// txtHotKey_CaptureRangeShow
+			// 
+			this.txtHotKey_CaptureRangeShow.Location = new System.Drawing.Point(145, 57);
+			this.txtHotKey_CaptureRangeShow.Name = "txtHotKey_CaptureRangeShow";
+			this.txtHotKey_CaptureRangeShow.ReadOnly = true;
+			this.txtHotKey_CaptureRangeShow.Size = new System.Drawing.Size(32, 21);
+			this.txtHotKey_CaptureRangeShow.TabIndex = 8;
+			this.txtHotKey_CaptureRangeShow.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHotKey_CaptureRangeShow_KeyDown);
 			// 
 			// label3
 			// 
@@ -194,23 +289,15 @@
 			this.label1.Text = "API 키";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// txtHotKey_CaptureRangeShow
+			// btnLang1_Save
 			// 
-			this.txtHotKey_CaptureRangeShow.Location = new System.Drawing.Point(145, 57);
-			this.txtHotKey_CaptureRangeShow.Name = "txtHotKey_CaptureRangeShow";
-			this.txtHotKey_CaptureRangeShow.ReadOnly = true;
-			this.txtHotKey_CaptureRangeShow.Size = new System.Drawing.Size(32, 21);
-			this.txtHotKey_CaptureRangeShow.TabIndex = 8;
-			this.txtHotKey_CaptureRangeShow.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHotKey_CaptureRangeShow_KeyDown);
-			// 
-			// txtHotKey_CaptureOCR
-			// 
-			this.txtHotKey_CaptureOCR.Location = new System.Drawing.Point(145, 86);
-			this.txtHotKey_CaptureOCR.Name = "txtHotKey_CaptureOCR";
-			this.txtHotKey_CaptureOCR.ReadOnly = true;
-			this.txtHotKey_CaptureOCR.Size = new System.Drawing.Size(32, 21);
-			this.txtHotKey_CaptureOCR.TabIndex = 9;
-			this.txtHotKey_CaptureOCR.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHotKey_CaptureOCR_KeyDown);
+			this.btnLang1_Save.Location = new System.Drawing.Point(209, 15);
+			this.btnLang1_Save.Name = "btnLang1_Save";
+			this.btnLang1_Save.Size = new System.Drawing.Size(51, 67);
+			this.btnLang1_Save.TabIndex = 13;
+			this.btnLang1_Save.Text = "저장";
+			this.btnLang1_Save.UseVisualStyleBackColor = true;
+			this.btnLang1_Save.Click += new System.EventHandler(this.btnLang1_Save_Click);
 			// 
 			// frmRemote
 			// 
@@ -224,6 +311,7 @@
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
+			this.groupBox1.ResumeLayout(false);
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage2.PerformLayout();
 			this.ResumeLayout(false);
@@ -248,6 +336,14 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox txtHotKey_CaptureOCR;
 		private System.Windows.Forms.TextBox txtHotKey_CaptureRangeShow;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.CheckBox chkLang1_Step2;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.ComboBox cbLang1_Step2;
+		private System.Windows.Forms.ComboBox cbLang1_Step1;
+		private System.Windows.Forms.ComboBox cbLang1_OCR;
+		private System.Windows.Forms.Button btnLang1_Save;
 	}
 }
 

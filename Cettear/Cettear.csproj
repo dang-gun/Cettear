@@ -97,13 +97,16 @@
     <Compile Include="GDIPlus.cs" />
     <Compile Include="Global\FixString\FileDir.cs" />
     <Compile Include="Global\Global_Cetterar.cs" />
+    <Compile Include="LanguageCode.cs" />
     <Compile Include="OCR\OCRManager.cs" />
     <Compile Include="OCR\OCR_Data.cs" />
+    <Compile Include="ExternalAPI\Google\GoogleOCR.cs" />
     <Compile Include="OCR\OCR_GroupData.cs" />
     <Compile Include="Option\Option_Google.cs" />
     <Compile Include="Option\OptionManager.cs" />
     <Compile Include="Option\Option_Capture.cs" />
     <Compile Include="Option\Option_KeySetting.cs" />
+    <Compile Include="Option\Option_ProcessLanguage.cs" />
     <Compile Include="Option\ProgramOption.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -144,6 +147,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Project_VS\DGUtil\DGU_Enum_PCL\DGU_Enum_PCL.csproj">
+      <Project>{B6C5C2A9-ABA1-4ECB-8AD7-E0A9AFE0AF1A}</Project>
+      <Name>DGU_Enum_PCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\Project_VS\DGUtil\DGU_File\DGU_File.csproj">
       <Project>{03619679-b44a-4c13-acd5-372409adf4a6}</Project>
       <Name>DGU_File</Name>

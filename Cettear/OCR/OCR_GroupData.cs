@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,13 @@ namespace Cettear.OCR
 {
 	public class OCR_GroupData
 	{
+		/// <summary>
+		/// 에러 여부
+		/// </summary>
+		public bool Error { get; set; }
+
 		//이 그룹의 전체 정보
-		public OCR_Data GroupData { get; private set; }
+		public OCR_Data GroupData { get; set; }
 
 		/// <summary>
 		/// 사용할 맴버의 숫자
@@ -28,6 +34,8 @@ namespace Cettear.OCR
 
 		public OCR_GroupData()
 		{
+			this.Error = false;
+
 			this.GroupData = new OCR_Data();
 			this.MemberList = new List<OCR_Data>();
 		}
@@ -38,7 +46,9 @@ namespace Cettear.OCR
 		/// </summary>
 		public void InputComplete()
 		{
-			int nLastIndex = this.MemberCount - 1;
+			//int nLastIndex = this.MemberCount - 1;
+			int nLastIndex = this.MemberList.Count - 1;
+			
 
 			//버택스 시작 위치 계산
 			this.GroupData.Vertex1_X = this.MemberList[0].Vertex1_X;
@@ -53,6 +63,10 @@ namespace Cettear.OCR
 			this.GroupData.Vertex4_X = this.MemberList[0].Vertex1_X;
 			this.GroupData.Vertex4_Y = this.MemberList[nLastIndex].Vertex3_Y;
 
+			this.GroupData.RectF = new RectangleF(this.GroupData.Vertex1_X
+													, this.GroupData.Vertex1_Y
+													, this.GroupData.Vertex3_X - this.GroupData.Vertex1_X
+													, this.GroupData.Vertex3_Y - this.GroupData.Vertex1_Y);
 		}
 	}
 }

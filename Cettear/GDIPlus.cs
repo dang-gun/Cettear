@@ -101,8 +101,8 @@ namespace Cettear
 			{
 				RectangleF rectF1 = new RectangleF(tempRow.GroupData.RectF.X + nWeightX
 													, tempRow.GroupData.RectF.Y + nWeightY
-													, tempRow.GroupData.RectF.Width
-													, tempRow.GroupData.RectF.Height);
+													, tempRow.GroupData.RectF.Width + 10
+													, tempRow.GroupData.RectF.Height + 10);
 				//출력값
 				sTemp = tempRow.TranslateData;
 				if (true == bOCRView)

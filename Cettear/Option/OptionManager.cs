@@ -14,8 +14,10 @@ namespace Cettear.Option
 		private readonly string Dir_Capture;
 		private readonly string Dir_Google;
 		public readonly string Dir_GoogleServiceFile;
-
+		
 		private readonly string Dir_KeySetting;
+
+		public readonly string Dir_ProcessLanguage;
 
 
 		/// <summary>
@@ -37,6 +39,11 @@ namespace Cettear.Option
 		/// </summary>
 		public Option_KeySetting KeySetting { get; set; }
 
+		/// <summary>
+		/// 번역 언어 지정
+		/// </summary>
+		public Option_ProcessLanguage ProcessLanguage { get; set; }
+
 
 		public OptionManager()
 		{
@@ -49,6 +56,8 @@ namespace Cettear.Option
 			this.Dir_GoogleServiceFile = FileDir.Dir_Option + "GoogleServiceKey.json";
 
 			this.Dir_KeySetting = FileDir.Dir_Option + "KeySetting.xml";
+
+			this.Dir_ProcessLanguage = FileDir.Dir_Option + "ProcessLanguage.xml";
 
 			//캡쳐 정보 ***********************
 			this.Capture = (Option_Capture)this.m_Xml.Load(typeof(Option_Capture)
@@ -87,6 +96,16 @@ namespace Cettear.Option
 				//저장
 				this.m_Xml.Save(this.KeySetting, this.Dir_KeySetting);
 			}
+
+			//번역 언어 지정 그룹 *************************
+			this.ProcessLanguage = (Option_ProcessLanguage)this.m_Xml.Load(typeof(Option_ProcessLanguage)
+															, this.Dir_ProcessLanguage);
+			if (null == this.ProcessLanguage)
+			{
+				this.ProcessLanguage = new Option_ProcessLanguage();
+				this.m_Xml.Save(this.ProcessLanguage, this.Dir_ProcessLanguage);
+			}
+
 		}
 
 		/// <summary>
@@ -113,6 +132,12 @@ namespace Cettear.Option
 		{
 			//파일을 저장한다.
 			File.Copy(sOriDir, this.Dir_GoogleServiceFile, true);
+			this.Google.ServiceKeyFile = true;
+		}
+
+		public void Save_ProcessLanguage()
+		{
+			this.m_Xml.Save(this.ProcessLanguage, this.Dir_ProcessLanguage);
 		}
 
 		/// <summary>

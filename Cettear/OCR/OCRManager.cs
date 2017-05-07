@@ -13,7 +13,7 @@ namespace Cettear.OCR
 		/// <summary>
 		/// 화면에 그릴 데이터
 		/// </summary>
-		public List<OCR_GroupData> GroupList { get; private set; }
+		public List<OCR_GroupData> GroupList { get; set; }
 
 
 		public OCRManager()
